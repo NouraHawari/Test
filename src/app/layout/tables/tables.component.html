@@ -1,0 +1,75 @@
+<div [@routerTransition]  >
+ 
+     
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">
+                   Manage User accounts
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Email</th>
+                            <th>First_name</th>
+                            <th>Last_name</th>
+                            <th>User Group</th>
+                            <th>Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><ul *ngFor="let user of users" > 
+                                {{ user.uacc_id }}
+                          
+                            </ul></td>
+                            <td><ul *ngFor="let user of users" > 
+                            <a href="/update-user/{{user.uacc_id}}"
+                            
+                            routerLink="/update-user/{{user.uacc_id}}"
+                            routerLinkActive="on"
+                            >
+                            {{ user.uacc_email }}</a> </ul>
+
+                            </td>
+                            <td><ul *ngFor="let user of users" > 
+                                    {{ user.upro_first_name }}
+                              
+                                </ul></td>
+                            <td><ul *ngFor="let user of users" > 
+                                    {{ user.upro_last_name }}
+                              
+                                </ul>
+                            </td>
+                            <td><ul *ngFor="let user of users" > 
+                                {{ user.ugrp_name }}
+                          
+                            </ul>
+                            </td>
+                            <td> <ul *ngFor="let user of users" >
+                                    <div class="checkbox"><input name="checkbox" type="checkbox" value=""
+                                        [checked]="user.selected" (change)="user.selected = !user.selected"></div>
+                                        
+                                </ul>
+
+                              </td>
+                              <td><ul *ngFor="let user of users;let i=index" >
+                                <button type="button" class="btn btn-sm btn-secondary" (click)="delete(i)" 
+                                >Delete</button>
+                            </ul>
+                            </td>
+                        </tr>
+                      
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div>
+                    <p><button type="button" class="btn btn-secondary" (click)="delete()">Delete Users</button></p>
+                    
+                </div>
+    </div>
+        
+</div>

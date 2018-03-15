@@ -1,0 +1,31 @@
+<div class="row justify-content-md-center">
+  <div class="col-md-4">
+         <img class="user-avatar" src="assets/images/logo.png" width="150px" />
+           
+      <form role="form">
+          <div class="form-content">
+              <div class="form-group">
+                    
+                    <label>Group Name :</label>
+                    <input type="text" class="form-control input-underline input-lg" id="1" [(ngModel)]="updateForm.update_group_name" [ngModelOptions]="{standalone: true}">
+              </div>
+              
+              <fieldset class="form-group">
+                <label>Group Description :</label>
+                <textarea class="form-control" rows="3" id="2"
+                [(ngModel)]="updateForm.update_group_description" [ngModelOptions]="{standalone: true}"></textarea>
+            </fieldset>
+            <div class="checkbox">
+                    <label>Is Admin Group:</label>&nbsp;
+                    <label>
+                        <input type="checkbox" value="" [(ngModel)]="updateForm.update_group_admin" 
+                        [ngModelOptions]="{standalone: true}"></label>
+              
+            </div>
+            <a class="btn btn-success"  (click)="update()" > Update </a>&nbsp;
+            <a class="btn btn-danger" href="/user-group" > Concel </a>
+            </div>
+        </form>
+    </div>
+</div>
+

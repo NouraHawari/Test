@@ -1,0 +1,65 @@
+
+<div class="row">
+  <div class="col col-xl-12 col-lg-12">
+      <div class="card mb-3">
+          <div class="card-header">
+             Manage User Groups
+          </div>
+          <div class="card-body table-responsive">
+              <table class="table">
+                  <thead>
+                  <tr>
+                     
+                      <th>ID</th>
+                      <th>Group Name</th>
+                      <th>Description</th>
+                      <th>Is Admin Group</th>
+                      <th>Delete</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                      
+                      <td><ul *ngFor="let user_groups of user_groups" > 
+                    
+                      {{ user_groups.ugrp_id }}</ul>
+
+                      </td>
+                      <td><ul *ngFor="let user_groups of user_groups" > 
+                              
+                              <a href="/update-group/{{user_groups.ugrp_id}}"
+                            
+                              routerLink="/update-group/{{user_groups.ugrp_id}}"
+                              routerLinkActive="on"
+                              > {{ user_groups.ugrp_name }}</a>
+                          </ul></td>
+                      <td><ul *ngFor="let user_groups of user_groups" > 
+                              {{ user_groups.ugrp_desc }}
+                        
+                          </ul>
+                      </td>
+                      <td><ul *ngFor="let user_groups of user_groups" > 
+                          {{ user_groups.ugrp_admin }}
+                    
+                      </ul>
+                  </td>
+                  <td> <ul *ngFor="let user_groups of user_groups" >
+                        <div class="checkbox"><input type="checkbox" value=""
+                            [checked]="user_groups.selected" (change)="user_groups.selected = !user_groups.selected"></div>
+                    </ul>
+                  </td>
+                  
+                  </tr>
+                
+                  </tbody>
+              </table>
+
+          </div>
+         
+      </div>
+       <div>
+            <p><button type="button" class="btn btn-secondary" (click)="delete()" >Delete Checked User Groups</button>
+            <button type="button" class="btn btn-secondary" [routerLink]="['/insert-user-group']" >Insert New User Group</button></p>
+        </div>
+</div>
+

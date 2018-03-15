@@ -1,0 +1,43 @@
+<div class="login-page" [@routerTransition]>
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img class="user-avatar" src="assets/images/logo.png" width="150px" />
+            <h1>SB Admin BS4 Angular5</h1>
+            <form role="form">
+                <div class="form-content">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-underline input-lg" id="1" placeholder="First Name"  [(ngModel)]="registerForm.register_first_name" [ngModelOptions]="{standalone: true}">
+
+                       
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control input-underline input-lg" id="2" placeholder="Last Name" [(ngModel)]="registerForm.register_last_name" [ngModelOptions]="{standalone: true}">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control input-underline input-lg" id="3" placeholder="Phone " [(ngModel)]="registerForm.register_phone_number" [ngModelOptions]="{standalone: true}">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control input-underline input-lg" id="4" placeholder="Email" [(ngModel)]="registerForm.register_email_address" [ngModelOptions]="{standalone: true}">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control input-underline input-lg" id="5" placeholder="Newsletter " [(ngModel)]="registerForm.register_newsletter" [ngModelOptions]="{standalone: true}">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control input-underline input-lg" id="6" placeholder="Username " [(ngModel)]="registerForm.register_username" [ngModelOptions]="{standalone: true}">
+                    </div>
+                    
+
+                    <div class="form-group">
+                        <input type="password" class="form-control input-underline input-lg" id="7" placeholder="Password" [(ngModel)]="registerForm.register_password" [ngModelOptions]="{standalone: true}">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control input-underline input-lg" id="8" placeholder="Repeat Password" [(ngModel)]="registerForm.register_repeat_password" [ngModelOptions]="{standalone: true}">
+                    </div>
+                    
+                </div>
+                <a class="btn rounded-btn"  (click)="onSignup()" > Register </a>&nbsp;
+                <a class="btn rounded-btn" [routerLink]="['/login']" > Log in </a>
+            </form>
+        </div>
+    </div>
+</div>
